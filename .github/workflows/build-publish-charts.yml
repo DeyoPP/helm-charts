@@ -33,3 +33,5 @@ jobs:
           add: 'docs/packages/*, docs/index.yaml'
           message: 'Automated update of Helm charts'
           branch: main
+          committer_name: 'GitHub Actions'
+          committer_email: 'actions@github.com'
