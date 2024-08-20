@@ -9,6 +9,7 @@ jobs:
   build-and-publish:
     name: Build and Publish Helm Charts
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
@@ -18,10 +19,15 @@ jobs:
         with:
           helm-version: v3.x
 
+      - name: Display Directory Contents
+        run: ls -R
+
       - name: Package Helm Charts
         run: |
           mkdir -p docs/packages
           helm package charts/* --destination docs/packages
+        env:
+          HELM_EXPERIMENTAL_OCI: "1"  # Add this if you are using OCI-based Helm charts
 
       - name: Update Helm Repository Index
         run: |
