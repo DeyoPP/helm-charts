@@ -1,0 +1,12 @@
+The release has been installed.
+
+Access your application at the following URL:
+
+{{- range .Values.ingress.hosts }}
+  Host: {{ .host }}
+  Paths:
+  {{- range .paths }}
+    - {{ . }}
+  {{- end }}
+{{- end }}
+

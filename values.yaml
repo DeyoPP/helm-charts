@@ -1,0 +1,56 @@
+replicaCount: 3
+
+image:
+  repository: "976552365380.dkr.ecr.eu-central-1.amazonaws.com/dipl-rad"
+  tag: "latest"
+
+service:
+  name: "tours-service"
+  type: ClusterIP
+  port: 8081
+  targetPort: 8081
+  nodePort: null
+  path: "/"
+
+serviceAccount:
+  name: my-service-account
+
+ingress:
+  enabled: true
+  name: "my-ingress"
+  className: "nginx"
+  host: "api.dejan.fornul.io"
+  path: "/"
+  # annotations:
+  #   nginx.ingress.kubernetes.io/rewrite-target: "/"
+  #   nginx.ingress.kubernetes.io/ssl-redirect: "false"
+
+externalSecret:
+  name: my-external-secret
+  refreshInterval: "15m"
+  secretStoreRef:
+    name: aws-secrets-manager
+    kind: SecretStore
+    region: eu-central-1
+  data:
+    - secretKey: POSTGRES_USER
+      remoteRef:
+        key: explorer_db_values
+        property: username
+    - secretKey: POSTGRES_PASSWORD
+      remoteRef:
+        key: explorer_db_values
+        property: password
+    - secretKey: POSTGRES_DB
+      remoteRef:
+        key: explorer_db_values
+        property: db_name
+    - secretKey: POSTGRES_HOST
+      remoteRef:
+        key: explorer_db_values
+        property: host
+    - secretKey: POSTGRES_PORT
+      remoteRef:
+        key: explorer_db_values
+        property: port
+
