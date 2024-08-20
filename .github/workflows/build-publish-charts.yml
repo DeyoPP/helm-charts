@@ -6,38 +6,32 @@ on:
       - main
 
 jobs:
-  build-and-publish:
-    name: Build and Publish Helm Charts
+  release:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout Repository
+      - name: Checkout Code
         uses: actions/checkout@v3
 
-      - name: Set up Helm
-        uses: azure/setup-helm@v1
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
         with:
-          helm-version: v3.x
+          node-version: '16'
 
-      - name: Display Directory Contents
-        run: ls -R
+      - name: Install Dependencies
+        run: npm install -g semantic-release @semantic-release/github @semantic-release/git
 
-      - name: Package Helm Charts
-        run: |
-          mkdir -p docs/packages
-          helm package charts/* --destination docs/packages
+      - name: Semantic Release
         env:
-          HELM_EXPERIMENTAL_OCI: "1"  # Add this if you are using OCI-based Helm charts
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: semantic-release
 
-      - name: Update Helm Repository Index
+      - name: Update GitHub Pages
+        if: github.ref == 'refs/heads/main'
         run: |
-          helm repo index docs/packages --url https://DeyoPP.github.io/helm-charts
-
-      - name: Commit and Push Changes
-        uses: EndBug/add-and-commit@v9
-        with:
-          add: 'docs/packages/*, docs/index.yaml'
-          message: 'Automated update of Helm charts'
-          branch: main
-          committer_name: 'GitHub Actions'
-          committer_email: 'actions@github.com'
+          git clone https://github.com/${{ github.repository }} gh-pages
+          cd gh-pages
+          git checkout gh-pages
+          helm repo index --url https://DeyoPP.github.io/helm-charts .
+          git add .
+          git commit -m "Update Helm chart index"
+          git push
