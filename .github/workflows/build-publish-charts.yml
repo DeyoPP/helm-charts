@@ -15,23 +15,37 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '21'
+          node-version: '18'
 
       - name: Install Dependencies
-        run: npm install -g semantic-release @semantic-release/github @semantic-release/git
+        run: |
+          npm install -g semantic-release @semantic-release/github @semantic-release/git
+          rm -rf node_modules
+          npm install
 
       - name: Semantic Release
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: semantic-release
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: npx semantic-release
 
-      - name: Update GitHub Pages
-        if: github.ref == 'refs/heads/main'
+      - name: Package Helm Charts
         run: |
-          git clone https://github.com/${{ github.repository }} gh-pages
+          helm package ./charts --destination ./charts/packages
+
+      - name: Index Helm Charts
+        run: |
+          helm repo index ./charts/packages --url https://<your-github-username>.github.io/helm-charts/
+
+      - name: Deploy to GitHub Pages
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: |
+          git config --global user.email "actions@github.com"
+          git config --global user.name "github-actions"
+          git clone --branch gh-pages https://github.com/${{ github.repository }} gh-pages
           cd gh-pages
-          git checkout gh-pages
-          helm repo index --url https://DeyoPP.github.io/helm-charts .
+          rm -rf *
+          cp -R ../charts/packages/* .
           git add .
-          git commit -m "Update Helm chart index"
+          git commit -m "Update Helm chart index and packages"
           git push
