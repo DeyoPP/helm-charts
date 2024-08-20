@@ -1,4 +1,4 @@
-name: Helm Chart Release
+name: Release Charts
 
 on:
   push:
@@ -7,45 +7,28 @@ on:
 
 jobs:
   release:
+    # depending on default permission settings for your org (contents being read-only or read-write for workloads), you will have to add permissions
+    # see: https://docs.github.com/en/actions/security-guides/automatic-token-authentication#modifying-the-permissions-for-the-github_token
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Code
+      - name: Checkout
         uses: actions/checkout@v3
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
         with:
-          node-version: '22'
+          fetch-depth: 0
 
-      - name: Install Dependencies
+      - name: Configure Git
         run: |
-          npm install -g semantic-release @semantic-release/github @semantic-release/git
-          rm -rf node_modules
-          npm install
+          git config user.name "$GITHUB_ACTOR"
+          git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
 
-      - name: Semantic Release
+      - name: Install Helm
+        uses: azure/setup-helm@v4
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
-        run: npx semantic-release
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
 
-      - name: Package Helm Charts
-        run: |
-          helm package ./charts --destination ./charts/packages
-
-      - name: Index Helm Charts
-        run: |
-          helm repo index ./charts/packages --url https://<your-github-username>.github.io/helm-charts/
-
-      - name: Deploy to GitHub Pages
+      - name: Run chart-releaser
+        uses: helm/chart-releaser-action@v1.6.0
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
-        run: |
-          git config --global user.email "actions@github.com"
-          git config --global user.name "github-actions"
-          git clone --branch gh-pages https://github.com/${{ github.repository }} gh-pages
-          cd gh-pages
-          rm -rf *
-          cp -R ../charts/packages/* .
-          git add .
-          git commit -m "Update Helm chart index and packages"
-          git push
+          CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
