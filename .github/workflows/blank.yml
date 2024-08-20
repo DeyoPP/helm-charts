@@ -1,0 +1,35 @@
+name: Helm Chart Release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-publish:
+    name: Build and Publish Helm Charts
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Set up Helm
+        uses: azure/setup-helm@v1
+        with:
+          helm-version: v3.x
+
+      - name: Package Helm Charts
+        run: |
+          mkdir -p docs/packages
+          helm package charts/* --destination docs/packages
+
+      - name: Update Helm Repository Index
+        run: |
+          helm repo index docs/packages --url https://DeyoPP.github.io/helm-charts
+
+      - name: Commit and Push Changes
+        uses: EndBug/add-and-commit@v9
+        with:
+          add: 'docs/packages/*, docs/index.yaml'
+          message: 'Automated update of Helm charts'
+          branch: main
