@@ -19,12 +19,13 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout Source Code
         uses: actions/checkout@v2
         with:
           path: 'src'
           fetch-depth: 0
-      - name: Checkout
+
+      - name: Checkout GitHub Pages
         uses: actions/checkout@v2
         with:
           path: 'dest'
@@ -42,9 +43,12 @@ jobs:
               echo "$d"
               helm package "$d" -u -d dest
           done
-      - name: Push New Files
+
+      - name: Push New Files to GitHub Pages
         shell: bash
         working-directory: dest
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}  # Use GitHub token for authentication
         run: |
           helm repo index . --url https://deyopp.github.io/helm-charts
           git config user.name "Helm Updater"
@@ -52,4 +56,4 @@ jobs:
           git add $(git ls-files -o --exclude-standard)
           git add index.yaml
           git commit -m "Updated from ref: $GITHUB_SHA"
-          git push
+          git push "https://${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }}.git" gh-pages
