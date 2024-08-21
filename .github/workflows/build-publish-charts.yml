@@ -3,6 +3,12 @@ name: Release Helm Charts
 # Do not change this
 concurrency: release-helm
 
+permissions:
+  id-token: write
+  contents: write
+  pull-requests: write
+  issues: write
+
 on:
   workflow_dispatch:
   push:
