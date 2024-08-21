@@ -48,7 +48,7 @@ jobs:
         shell: bash
         working-directory: dest
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Use GitHub token for authentication
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}  # Use GitHub token for authentication
         run: |
           helm repo index . --url https://deyopp.github.io/helm-charts
           git config user.name "Helm Updater"
@@ -56,4 +56,4 @@ jobs:
           git add $(git ls-files -o --exclude-standard)
           git add index.yaml
           git commit -m "Updated from ref: $GITHUB_SHA"
-          git push "https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" gh-pages
+          git push "https://${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }}.git" gh-pages
