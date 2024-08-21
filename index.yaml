@@ -3,12 +3,12 @@ entries:
   explorer-microservices:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-08-21T10:15:45.032759797Z"
+    created: "2024-08-21T10:29:16.327060387Z"
     description: A Helm chart for Kubernetes
     digest: d6ebc08563f93d3535b69e92333e13050c2fbb86bf94059470e9e26aa4418529
     name: explorer-microservices
     type: application
     urls:
-    - https://deyopp.github.io/helm-charts/gh-pages/explorer-microservices-0.1.0.tgz
+    - https://deyopp.github.io/helm-charts/explorer-microservices-0.1.0.tgz
     version: 0.1.0
-generated: "2024-08-21T10:15:45.032210366Z"
+generated: "2024-08-21T10:29:16.326608862Z"
