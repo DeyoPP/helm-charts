@@ -46,7 +46,7 @@ jobs:
         shell: bash
         working-directory: dest
         run: |
-          helm repo index . --url https://deyopp.github.io/helm-charts/gh-pages/
+          helm repo index . --url https://deyopp.github.io/helm-charts
           git config user.name "Helm Updater"
           git config user.email "actions@users.noreply.github.com"
           git add $(git ls-files -o --exclude-standard)
