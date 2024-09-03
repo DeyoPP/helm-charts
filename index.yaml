@@ -3,82 +3,82 @@ entries:
   explorer-microservices:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-09-03T12:15:03.285075673Z"
+    created: "2024-09-03T12:28:49.987143267Z"
     description: A Helm chart for Kubernetes
     digest: 74e174314267ecc733da97239e6485b4d0fefe3e49fa24fb0ad404d4420dd303
     name: explorer-microservices
     type: application
     urls:
-    - https://deyopp.github.io/helm-charts/gh-pages/explorer-microservices-0.3.5.tgz
+    - https://raw.githubusercontent.com/deyopp/helm-charts/gh-pages/explorer-microservices-0.3.5.tgz
     version: 0.3.5
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-09-03T12:15:03.284693848Z"
+    created: "2024-09-03T12:28:49.986720829Z"
     description: A Helm chart for Kubernetes
     digest: 0be2252ef08da1aa57154ec13e36dfc95826bdbe04d5ea1b6456cb22c4d5ede1
     name: explorer-microservices
     type: application
     urls:
-    - https://deyopp.github.io/helm-charts/gh-pages/explorer-microservices-0.3.4.tgz
+    - https://raw.githubusercontent.com/deyopp/helm-charts/gh-pages/explorer-microservices-0.3.4.tgz
     version: 0.3.4
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-09-03T12:15:03.284302103Z"
+    created: "2024-09-03T12:28:49.986328948Z"
     description: A Helm chart for Kubernetes
     digest: 2e81816aff209d71bc29283ece3926b03ba0ed06593357dcdb1319e377b39e5a
     name: explorer-microservices
     type: application
     urls:
-    - https://deyopp.github.io/helm-charts/gh-pages/explorer-microservices-0.3.3.tgz
+    - https://raw.githubusercontent.com/deyopp/helm-charts/gh-pages/explorer-microservices-0.3.3.tgz
     version: 0.3.3
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-09-03T12:15:03.283911831Z"
+    created: "2024-09-03T12:28:49.985930925Z"
     description: A Helm chart for Kubernetes
     digest: 652b2c1074a4deafadac1606fb01fe75a896dac077d9d86d9907e17a6af33ec1
     name: explorer-microservices
     type: application
     urls:
-    - https://deyopp.github.io/helm-charts/gh-pages/explorer-microservices-0.3.2.tgz
+    - https://raw.githubusercontent.com/deyopp/helm-charts/gh-pages/explorer-microservices-0.3.2.tgz
     version: 0.3.2
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-09-03T12:15:03.283486093Z"
+    created: "2024-09-03T12:28:49.985538974Z"
     description: A Helm chart for Kubernetes
     digest: 2aff2b0f66e0f70959a7ccccacd227560cdd08dffce8053c4f7f3f4a76ea938c
     name: explorer-microservices
     type: application
     urls:
-    - https://deyopp.github.io/helm-charts/gh-pages/explorer-microservices-0.3.1.tgz
+    - https://raw.githubusercontent.com/deyopp/helm-charts/gh-pages/explorer-microservices-0.3.1.tgz
     version: 0.3.1
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-09-03T12:15:03.283100079Z"
+    created: "2024-09-03T12:28:49.98512928Z"
     description: A Helm chart for Kubernetes
     digest: b7cf23a30954ae90aca613b3d955da2357d0b7d41e3210fec39cda3c5bd5bb2f
     name: explorer-microservices
     type: application
     urls:
-    - https://deyopp.github.io/helm-charts/gh-pages/explorer-microservices-0.3.0.tgz
+    - https://raw.githubusercontent.com/deyopp/helm-charts/gh-pages/explorer-microservices-0.3.0.tgz
     version: 0.3.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-09-03T12:15:03.282694058Z"
+    created: "2024-09-03T12:28:49.984734043Z"
     description: A Helm chart for Kubernetes
     digest: 1c634d97f0f3c1342247f5100294e9dd1d9ab78323c6b843b56b4446a2c63ba1
     name: explorer-microservices
     type: application
     urls:
-    - https://deyopp.github.io/helm-charts/gh-pages/explorer-microservices-0.2.0.tgz
+    - https://raw.githubusercontent.com/deyopp/helm-charts/gh-pages/explorer-microservices-0.2.0.tgz
     version: 0.2.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-09-03T12:15:03.282278058Z"
+    created: "2024-09-03T12:28:49.984305373Z"
     description: A Helm chart for Kubernetes
     digest: d6ebc08563f93d3535b69e92333e13050c2fbb86bf94059470e9e26aa4418529
     name: explorer-microservices
     type: application
     urls:
-    - https://deyopp.github.io/helm-charts/gh-pages/explorer-microservices-0.1.0.tgz
+    - https://raw.githubusercontent.com/deyopp/helm-charts/gh-pages/explorer-microservices-0.1.0.tgz
     version: 0.1.0
-generated: "2024-09-03T12:15:03.281362153Z"
+generated: "2024-09-03T12:28:49.983819737Z"
