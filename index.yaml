@@ -3,7 +3,17 @@ entries:
   explorer-microservices:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-09-05T10:26:24.651884465Z"
+    created: "2024-09-05T14:31:41.636047131Z"
+    description: A Helm chart for Kubernetes
+    digest: 3faf4438404bd03ab6f68f8bd8c58b967b3c67a987ec102b4350ff65ea901f43
+    name: explorer-microservices
+    type: application
+    urls:
+    - https://raw.githubusercontent.com/deyopp/helm-charts/gh-pages/explorer-microservices-0.3.12.tgz
+    version: 0.3.12
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2024-09-05T14:31:41.635644116Z"
     description: A Helm chart for Kubernetes
     digest: d7f23f84fc1c46d2ad80f64334da167fd77e9e40158cb4a7fa1374ce897b85b3
     name: explorer-microservices
@@ -13,7 +23,7 @@ entries:
     version: 0.3.11
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-09-05T10:26:24.651487589Z"
+    created: "2024-09-05T14:31:41.63524642Z"
     description: A Helm chart for Kubernetes
     digest: 6e8717a210deea9884408251f54ce5578c4964bf53888b913d12905f7e8d29ed
     name: explorer-microservices
@@ -23,7 +33,7 @@ entries:
     version: 0.3.10
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-09-05T10:26:24.655358783Z"
+    created: "2024-09-05T14:31:41.640049102Z"
     description: A Helm chart for Kubernetes
     digest: 11388041180ae265a7c56d0dabbd46a06c66f80703b04e1060bf5c3cbb55af2a
     name: explorer-microservices
@@ -33,7 +43,7 @@ entries:
     version: 0.3.9
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-09-05T10:26:24.654972777Z"
+    created: "2024-09-05T14:31:41.6391143Z"
     description: A Helm chart for Kubernetes
     digest: 6417fc38207a78db4d9a4bfbee47b45d431bfb0e7422ae25f561db712d24bb58
     name: explorer-microservices
@@ -43,7 +53,7 @@ entries:
     version: 0.3.8
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-09-05T10:26:24.654547358Z"
+    created: "2024-09-05T14:31:41.638723047Z"
     description: A Helm chart for Kubernetes
     digest: f506ab20e15d6c0984bba26a365159bfa119864fb0e54679542da336fbdddf60
     name: explorer-microservices
@@ -53,7 +63,7 @@ entries:
     version: 0.3.7
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-09-05T10:26:24.654086563Z"
+    created: "2024-09-05T14:31:41.638306035Z"
     description: A Helm chart for Kubernetes
     digest: 9fe4f2dd699ad1d7d197a75252b6bcc3622197870b2a0bc20240a8f4a32daa5e
     name: explorer-microservices
@@ -63,7 +73,7 @@ entries:
     version: 0.3.6
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-09-05T10:26:24.653497425Z"
+    created: "2024-09-05T14:31:41.637901467Z"
     description: A Helm chart for Kubernetes
     digest: 74e174314267ecc733da97239e6485b4d0fefe3e49fa24fb0ad404d4420dd303
     name: explorer-microservices
@@ -73,7 +83,7 @@ entries:
     version: 0.3.5
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-09-05T10:26:24.653106461Z"
+    created: "2024-09-05T14:31:41.63732169Z"
     description: A Helm chart for Kubernetes
     digest: 0be2252ef08da1aa57154ec13e36dfc95826bdbe04d5ea1b6456cb22c4d5ede1
     name: explorer-microservices
@@ -83,7 +93,7 @@ entries:
     version: 0.3.4
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-09-05T10:26:24.652678587Z"
+    created: "2024-09-05T14:31:41.636934074Z"
     description: A Helm chart for Kubernetes
     digest: 2e81816aff209d71bc29283ece3926b03ba0ed06593357dcdb1319e377b39e5a
     name: explorer-microservices
@@ -93,7 +103,7 @@ entries:
     version: 0.3.3
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-09-05T10:26:24.652288274Z"
+    created: "2024-09-05T14:31:41.636520608Z"
     description: A Helm chart for Kubernetes
     digest: 652b2c1074a4deafadac1606fb01fe75a896dac077d9d86d9907e17a6af33ec1
     name: explorer-microservices
@@ -103,7 +113,7 @@ entries:
     version: 0.3.2
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-09-05T10:26:24.651084863Z"
+    created: "2024-09-05T14:31:41.634809662Z"
     description: A Helm chart for Kubernetes
     digest: 2aff2b0f66e0f70959a7ccccacd227560cdd08dffce8053c4f7f3f4a76ea938c
     name: explorer-microservices
@@ -113,7 +123,7 @@ entries:
     version: 0.3.1
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-09-05T10:26:24.650693026Z"
+    created: "2024-09-05T14:31:41.634410784Z"
     description: A Helm chart for Kubernetes
     digest: b7cf23a30954ae90aca613b3d955da2357d0b7d41e3210fec39cda3c5bd5bb2f
     name: explorer-microservices
@@ -123,7 +133,7 @@ entries:
     version: 0.3.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-09-05T10:26:24.650277656Z"
+    created: "2024-09-05T14:31:41.633958376Z"
     description: A Helm chart for Kubernetes
     digest: 1c634d97f0f3c1342247f5100294e9dd1d9ab78323c6b843b56b4446a2c63ba1
     name: explorer-microservices
@@ -133,7 +143,7 @@ entries:
     version: 0.2.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-09-05T10:26:24.649847538Z"
+    created: "2024-09-05T14:31:41.633529622Z"
     description: A Helm chart for Kubernetes
     digest: d6ebc08563f93d3535b69e92333e13050c2fbb86bf94059470e9e26aa4418529
     name: explorer-microservices
@@ -141,4 +151,4 @@ entries:
     urls:
     - https://raw.githubusercontent.com/deyopp/helm-charts/gh-pages/explorer-microservices-0.1.0.tgz
     version: 0.1.0
-generated: "2024-09-05T10:26:24.649087147Z"
+generated: "2024-09-05T14:31:41.632727555Z"
